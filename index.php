@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include 'layouts/header.php';
 ?>
 
@@ -9,15 +10,17 @@
                 <form action="./controller/store-data.php" method="POST">
                     <div class="mb-3">
                         <label for="todoInput" class="form-label">ToDo Title</label>
-                        <input type="text" name="title" id="todoInput" class="form-control" placeholder="Enter Your ToDo">
+                        <input value="<?= $_SESSION['old_data'] ['title'] ?? ''?>" type="text" name="title" id="todoInput" class="form-control" placeholder="Enter Your ToDo">
+                        <span class="text-danger"><?= $_SESSION['input_errors']['title_error'] ?? '' ?></span>
                     </div>
                     <div class="mb-3">
                         <label for="description" class="form-label">ToDo Description</label>
-                        <input type="text" name="description" id="description" class="form-control" placeholder="Enter Your ToDo description">
+                        <input value="<?= $_SESSION['old_data'] ['description'] ?? '' ?>" type="text" name="description" id="description" class="form-control" placeholder="Enter Your ToDo description">
+                        <span class="text-danger"><?= $_SESSION['input_errors']['description_error'] ?? '' ?></span>
                     </div>
                     <div class="mb-3">
                         <label for="deadline" class="form-label">Deadline</label>
-                        <input type="date" name="deadline" id="deadline" class="form-control">
+                        <input value="<?= $_SESSION['old_data'] ['deadline'] ?? '' ?>" type="date" name="deadline" id="deadline" class="form-control">
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
@@ -27,4 +30,5 @@
 
 <?php
 include 'layouts/footer.php';
+session_unset();
 ?>
