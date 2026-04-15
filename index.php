@@ -1,9 +1,8 @@
 <?php
-    session_start();
     include 'layouts/header.php';
 ?>
 
-    <div class="col-lg-5 mx-auto">
+    <div class="col-lg-5 mx-auto mt-5">
         <div class="card">
             <div class="card-header">Add New ToDo</div>
             <div class="card-body">
@@ -22,7 +21,7 @@
                         <label for="deadline" class="form-label">Deadline</label>
                         <input value="<?= $_SESSION['old_data'] ['deadline'] ?? '' ?>" type="date" name="deadline" id="deadline" class="form-control">
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary w-100 mt-2">Submit</button>
                 </form>
             </div>
         </div>
@@ -30,5 +29,4 @@
 
 <?php
 include 'layouts/footer.php';
-session_unset();
 ?>
