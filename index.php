@@ -16,7 +16,7 @@
                     <div class="mb-3">
                         <label for="description" class="form-label">ToDo Description</label>
                         <input value="<?= $_SESSION['old_data'] ['description'] ?? '' ?>" type="text" name="description" id="description" class="form-control" placeholder="Enter Your ToDo description">
-                        <span class="text-danger"><?= $_SESSION['input_errors']['description_error'] ?? '' ?></span>
+                        <span class="text-danger" ><?= $_SESSION['input_errors']['description_error'] ?? '' ?></span>
                     </div>
                     <div class="mb-3">
                         <label for="deadline" class="form-label">Deadline</label>

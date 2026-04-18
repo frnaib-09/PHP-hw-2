@@ -14,7 +14,7 @@ if(empty($title)) {
     $errors['title_error'] = "*Digits are not allowed in the title";
 }
 
-if(strlen($description) > 10) {
+if(strlen($description) > 300) {
     $errors['description_error'] = "*The description can not cross 300 characters";
 }
 
