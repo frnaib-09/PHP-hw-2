@@ -5,6 +5,7 @@ $title = $_REQUEST['title'];
 $description = $_REQUEST['description'];
 $deadline = $_REQUEST['deadline'];
 $errors = [];
+$today = strtotime(Date('m/d/y'));
 
 if(empty($title)) {
     $errors['title_error'] = "*The title is required";
@@ -17,6 +18,10 @@ if(empty($title)) {
 if(strlen($description) > 300 || empty($description)) {
     $errors['description_error'] = "*The description can not cross 300 characters";
     $errors['description_error'] = "*The description is required";
+}
+
+if (strtotime($deadline) < $today) {
+    $errors['deadline_error'] = "Please select present/ future date!";
 }
 
 if(count($errors) > 0) {
