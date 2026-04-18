@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +23,7 @@
                         <a class="nav-link active" aria-current="page" href="./index.php">Add ToDo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./add-todo.php">ToDo List</a>
+                        <a class="nav-link active" aria-current="page" href="./added-todos.php">ToDo List</a>
                     </li>
                 </ul>
             </div>
